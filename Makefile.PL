@@ -116,6 +116,13 @@ if (!defined($curl_h)) {
     close H_IN;
     open (H, "<", $curl_h) or die ("Cannot open $curl_h: ".$!);
     while(<H>) {
+        # Skip defines without values like:
+        #    #define CURL_STRICTER
+        if (/^#define (CURL[A-Za-z0-9_]*)$/) {
+            chomp;
+            warn "Skipping '$_': does not define a symbol";
+            next;
+        }
         if (/^#define (CURL[A-Za-z0-9_]*)/) {
             push @syms, $1;
         }
