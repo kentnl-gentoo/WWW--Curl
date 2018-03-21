@@ -1,5 +1,11 @@
 #!perl
 
+BEGIN {
+  if ( $ENV{NO_NETWORK_TESTING} ) {
+    print "1..0 # SKIP NO_NETWORK_TESTING set";
+    exit 0;
+  }
+}
 use strict;
 use warnings;
 use Test::More tests => 19;
