@@ -37,7 +37,6 @@ t/18twinhandles.t
 t/19multi.t
 t/20undefined_subs.t
 t/21write-to-scalar.t
-t/meta.t
 t/new/00constants.t
 t/new/01basic.t
 t/new/02header-callback.t
@@ -50,8 +49,6 @@ t/new/08duphandle.t
 t/new/09duphandle-callback.t
 t/new/10multi-callback.t
 t/new/README
-t/pod-coverage.t
-t/pod.t
 t/symbols-in-versions
 template/Easy.pm.tmpl
 template/Share.pm.tmpl
